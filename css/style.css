@@ -511,6 +511,134 @@ section {
     font-weight: bold;
 }
 
+/* Screenshots Section */
+.screenshots {
+    background: var(--bg-secondary);
+}
+
+.screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.screenshot-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.screenshot-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
+}
+
+.screenshot-placeholder {
+    aspect-ratio: 16/10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-hover);
+}
+
+.screenshot-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.screenshot-placeholder p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* Roadmap Section */
+.roadmap {
+    background: var(--bg-primary);
+}
+
+.roadmap-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.roadmap-timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+}
+
+.roadmap-item {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 40px;
+}
+
+.roadmap-marker {
+    position: absolute;
+    left: 12px;
+    top: 4px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    background: var(--bg-card);
+}
+
+.roadmap-item-done .roadmap-marker {
+    background: var(--success);
+    border-color: var(--success);
+}
+
+.roadmap-item-progress .roadmap-marker {
+    background: var(--warning);
+    border-color: var(--warning);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.roadmap-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.roadmap-content p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.roadmap-status {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.roadmap-item-done .roadmap-status {
+    background: rgba(34, 197, 94, 0.2);
+    color: var(--success-light);
+}
+
+.roadmap-item-progress .roadmap-status {
+    background: rgba(245, 158, 11, 0.2);
+    color: var(--warning-light);
+}
+
 /* Support Section */
 .support {
     background: var(--bg-primary);
